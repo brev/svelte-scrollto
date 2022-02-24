@@ -1,19 +1,35 @@
 {
-  "name": "@brev/svelte-scrollto",
-  "version": "0.2.0",
-  "description": "Svelte action that listens for click events and scrolls to elements with animation. Inspired by rigor789/vue-scrollto.",
-  "keywords": [
-    "svelte",
-    "scroll",
-    "animate",
-    "scroll-to-element"
-  ],
+  "name": "svelte-scrollto-next",
+  "version": "1.0.0",
+  "description": "Fork of svelte-scrollto for modernization",
+  "homepage": "https://github.com/brev/svelte-scrollto-next#readme",
+  "license": "MIT",
   "main": "src/index.js",
   "type": "module",
-  "repository": "https://github.com/brev/svelte-scrollto",
-  "author": "langbamit <langbamit@gmail.com>",
-  "license": "MIT",
+  "author": {
+    "name": "Brev Patterson",
+    "url": "https://github.com/brev"
+  },
+  "bugs": {
+    "url": "https://github.com/brev/svelte-scrollto-next/issues"
+  },
   "dependencies": {
     "svelte": "3.x"
+  },
+  "devDependencies": {
+  },
+  "keywords": [
+    "svelte",
+    "scrollto",
+    "next",
+    "scroll",
+    "animate",
+    "element"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/brev/svelte-scrollto-next.git"
+  },
+  "scripts": {
   }
 }

@@ -1,23 +1,23 @@
-This is a fork of `svelte-scrollto`, with `{ type: 'module' }` set in
-`package.json`, and extensions added to an extension-less relative import.
+# svelte-scrollto-next
 
-# Svelte-scrollto
+Animating vertical and horizontal scrolling in Svelte.
 
-Animating vertical and horizontal scrolling
+**NOTE:** This is a fork of [svelte-scrollto][svelte-scrollto], with
+`{ type: 'module' }` set in `package.json`, and extensions added to an
+extension-less relative import. Future updates may include Typescript, tests,
+and other modernizations.
 
 ## Install
 
 ```bash
-npm install --save-dev svelte-scrollto
-# or
-yarn add -D svelte-scrollto
+npm install --save-dev svelte-scrollto-next
 ```
 
 ## Usage
 
 ```html
 <script>
-  import * as animateScroll from "svelte-scrollto";
+  import * as animateScroll from "svelte-scrollto-next";
 </script>
 
 <a on:click={() => animateScroll.scrollToBottom()}> Scroll to bottom </a>
@@ -27,11 +27,11 @@ yarn add -D svelte-scrollto
 <a on:click={() => animateScroll.scrollTo({element: 'scroll-to-element-selector', duration: 2000})}> Scroll to element over 2000ms </a>
 ```
 
+Using as a action:
 
-Using as a action
 ```html
 <script>
-  import { scrollto } from "svelte-scrollto";
+  import { scrollto } from "svelte-scrollto-next";
 </script>
 <!-- Parameter is element selector or options -->
 <a use:scrollto={'#scroll-element'}> Scroll to element </a>
@@ -43,7 +43,7 @@ Using as a action
 
 |     Option     | Required | Default value 																																									| Description |
 | :------------: | :------: | :-----------: 																																									| :---------: |
-| `container`    | 		✔     | `"body"`      																																									| Scroll container 
+| `container`    | 		✔     | `"body"`      																																									| Scroll container
 | `duration`     | 		✔     | `500` 																																													| The duration (in milliseconds) of the scrolling animation.
 | `delay`        | 		      | `0` 																																														|
 | `offset`       | 		      | `0` 																																														| The offset that should be applied when scrolling. This option accepts a callback function
@@ -56,8 +56,9 @@ Using as a action
 
 
 Override global options:
+
 ```javascript
-import * as animateScroll from "svelte-scrollto";
+import * as animateScroll from "svelte-scrollto-next";
 
 animateScroll.setGlobalOptions({
 	offset: 200,
@@ -74,6 +75,7 @@ animateScroll.setGlobalOptions({
 ### Functions
 
 #### `scrollTo(options)`
+
 Accepts all global options and:
 + `element`: The element you want scroll to
 + `x`: The offset we want to scrolling on the x axis
@@ -89,7 +91,8 @@ Shortcut of use scrollTo with `x` equal to *`containerHeight`*
 
 ### Actions
 
-Svelte action that listens for `click` (`touchstart`) events and scrolls to elements with animation. 
+Svelte action that listens for `click` (`touchstart`) events and scrolls to
+elements with animation.
 
 + `scrollto`
 
@@ -100,7 +103,18 @@ Svelte action that listens for `click` (`touchstart`) events and scrolls to elem
 
 ### Troubleshooting
 
-If you want to use Lazy and want to scroll to elements, you need to give your lazy components (images, v.v..) fixed dimensions, so the browser known the size of the not loaded elements before scrolling.
+If you want to use Lazy and want to scroll to elements, you need to give your
+lazy components (images, v.v..) fixed dimensions, so the browser known the
+size of the not loaded elements before scrolling.
 
+### License
+
+[MIT][mit-license]
+
+Copyright (c) 2019-2021 [langbamit][langbamit] (original author).
 
 [easing]: https://github.com/sveltejs/svelte/blob/master/src/runtime/easing/index.ts
+[langbamit]: https://github.com/langbamit
+[mit-license]: https://mit-license.org/
+[svelte-scrollto]: https://github.com/langbamit/svelte-scrollto
+
