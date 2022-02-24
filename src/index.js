@@ -1,6 +1,6 @@
 import { cubicInOut } from "svelte/easing";
 import { noop, loop, now } from "svelte/internal";
-import _ from "./helper";
+import _ from "./helper.js";
 
 const defaultOptions = {
   container: "body",

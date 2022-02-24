@@ -1,5 +1,5 @@
 {
-  "name": "svelte-scrollto",
+  "name": "@brev/svelte-scrollto",
   "version": "0.2.0",
   "description": "Svelte action that listens for click events and scrolls to elements with animation. Inspired by rigor789/vue-scrollto.",
   "keywords": [
@@ -9,7 +9,8 @@
     "scroll-to-element"
   ],
   "main": "src/index.js",
-  "repository": "https://github.com/langbamit/svelte-scrollto",
+  "type": "module",
+  "repository": "https://github.com/brev/svelte-scrollto",
   "author": "langbamit <langbamit@gmail.com>",
   "license": "MIT",
   "dependencies": {

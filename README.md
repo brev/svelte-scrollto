@@ -1,3 +1,6 @@
+This is a fork of `svelte-scrollto`, with `{ type: 'module' }` set in
+`package.json`, and extensions added to an extension-less relative import.
+
 # Svelte-scrollto
 
 Animating vertical and horizontal scrolling
