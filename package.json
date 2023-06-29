@@ -14,9 +14,8 @@
     "url": "https://github.com/brev/svelte-scrollto-next/issues"
   },
   "dependencies": {
-    "svelte": "3.x"
+    "svelte": ">=3"
   },
-  "devDependencies": {},
   "keywords": [
     "svelte",
     "scrollto",

@@ -3,12 +3,14 @@
 Animating vertical and horizontal scrolling in Svelte.
 
 **NOTE:**
+
 This is a fork of [svelte-scrollto][svelte-scrollto],
 which has been archived. Changes are:
 
 - Set `{ type: 'module' }` in `package.json`.
 - File extensions added to extension-less relative imports.
 - Set `touchstart` events to `passive` as per Lighthouse.
+- Updated to Svelte 4
 
 **Future?:**
 
