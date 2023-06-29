@@ -1,6 +1,6 @@
 {
   "name": "svelte-scrollto-next",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Fork of svelte-scrollto for modernization",
   "homepage": "https://github.com/brev/svelte-scrollto-next#readme",
   "license": "MIT",
@@ -16,8 +16,7 @@
   "dependencies": {
     "svelte": "3.x"
   },
-  "devDependencies": {
-  },
+  "devDependencies": {},
   "keywords": [
     "svelte",
     "scrollto",
@@ -30,6 +29,5 @@
     "type": "git",
     "url": "https://github.com/brev/svelte-scrollto-next.git"
   },
-  "scripts": {
-  }
+  "scripts": {}
 }
