@@ -2,10 +2,19 @@
 
 Animating vertical and horizontal scrolling in Svelte.
 
-**NOTE:** This is a fork of [svelte-scrollto][svelte-scrollto], with
-`{ type: 'module' }` set in `package.json`, and extensions added to an
-extension-less relative import. Future updates may include Typescript, tests,
-and other modernizations.
+**NOTE:**
+This is a fork of [svelte-scrollto][svelte-scrollto],
+which has been archived. Changes are:
+
+- Set `{ type: 'module' }` in `package.json`.
+- File extensions added to extension-less relative imports.
+- Set `touchstart` events to `passive` as per Lighthouse.
+
+**Future?:**
+
+- Typescript
+- Tests
+- Other Modernizations
 
 ## Install
 
@@ -41,34 +50,33 @@ Using as a action:
 
 ### Global Options
 
-|     Option     | Required | Default value 																																									| Description |
-| :------------: | :------: | :-----------: 																																									| :---------: |
-| `container`    | 		✔     | `"body"`      																																									| Scroll container
-| `duration`     | 		✔     | `500` 																																													| The duration (in milliseconds) of the scrolling animation.
-| `delay`        | 		      | `0` 																																														|
-| `offset`       | 		      | `0` 																																														| The offset that should be applied when scrolling. This option accepts a callback function
-| `easing`       | 		      | [`cubicInOut`](https://github.com/sveltejs/svelte/blob/master/src/runtime/easing/index.ts#L67) 	| The easing function to be used when animating. Can pass any easing from [`svelte/easing`](https://svelte.dev/docs#svelte_easing) or pass custom easing function.
-| `onStart`      | 		      | `noop` 																																													| A callback function that should be called when scrolling has started. Receives the target element and page offset as a parameter.
-| `onDone`       | 		      | `noop` 																																													| A callback function that should be called when scrolling has ended. Receives the target element and page offset  as a parameter.
-| `onAborting`   | 		      | `noop` 																																													| A callback function that should be called when scrolling has been aborted by the user (user scrolled, clicked etc.). Receives the target element and page offset as parameters.
-| `scrollX`      | 		      | `false` 																																												| Whether or not we want scrolling on the `x` axis
-| `scrollY`      | 		      | `true` 																																													| Whether or not we want scrolling on the `y` axis
-
+|    Option    | Required |                                         Default value                                          |                                                                                   Description                                                                                   |
+| :----------: | :------: | :--------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
+| `container`  |    ✔     |                                            `"body"`                                            |                                                                                Scroll container                                                                                 |
+|  `duration`  |    ✔     |                                             `500`                                              |                                                           The duration (in milliseconds) of the scrolling animation.                                                            |
+|   `delay`    |          |                                              `0`                                               |
+|   `offset`   |          |                                              `0`                                               |                                            The offset that should be applied when scrolling. This option accepts a callback function                                            |
+|   `easing`   |          | [`cubicInOut`](https://github.com/sveltejs/svelte/blob/master/src/runtime/easing/index.ts#L67) |        The easing function to be used when animating. Can pass any easing from [`svelte/easing`](https://svelte.dev/docs#svelte_easing) or pass custom easing function.         |
+|  `onStart`   |          |                                             `noop`                                             |                        A callback function that should be called when scrolling has started. Receives the target element and page offset as a parameter.                        |
+|   `onDone`   |          |                                             `noop`                                             |                         A callback function that should be called when scrolling has ended. Receives the target element and page offset as a parameter.                         |
+| `onAborting` |          |                                             `noop`                                             | A callback function that should be called when scrolling has been aborted by the user (user scrolled, clicked etc.). Receives the target element and page offset as parameters. |
+|  `scrollX`   |          |                                            `false`                                             |                                                                Whether or not we want scrolling on the `x` axis                                                                 |
+|  `scrollY`   |          |                                             `true`                                             |                                                                Whether or not we want scrolling on the `y` axis                                                                 |
 
 Override global options:
 
 ```javascript
-import * as animateScroll from "svelte-scrollto-next";
+import * as animateScroll from 'svelte-scrollto-next'
 
 animateScroll.setGlobalOptions({
-	offset: 200,
-	onStart: (element, offset) => {
-		if(element) {
-			console.log("Start scrolling to element:", element);
-		} else if(offset) {
-			console.log("Start scrolling to page offset: (${offset.x}, ${offset.y})");
-		}
-	}
+  offset: 200,
+  onStart: (element, offset) => {
+    if (element) {
+      console.log('Start scrolling to element:', element)
+    } else if (offset) {
+      console.log('Start scrolling to page offset: (${offset.x}, ${offset.y})')
+    }
+  },
 })
 ```
 
@@ -77,9 +85,10 @@ animateScroll.setGlobalOptions({
 #### `scrollTo(options)`
 
 Accepts all global options and:
-+ `element`: The element you want scroll to
-+ `x`: The offset we want to scrolling on the x axis
-+ `y`: The offset we want to scrolling on the y axis
+
+- `element`: The element you want scroll to
+- `x`: The offset we want to scrolling on the x axis
+- `y`: The offset we want to scrolling on the y axis
 
 #### `scrollToTop(options)`
 
@@ -87,19 +96,18 @@ Shortcut of use scrollTo with `x` equal to `0`.
 
 #### `scrollToBottom(options)`
 
-Shortcut of use scrollTo with `x` equal to *`containerHeight`*
+Shortcut of use scrollTo with `x` equal to _`containerHeight`_
 
 ### Actions
 
 Svelte action that listens for `click` (`touchstart`) events and scrolls to
 elements with animation.
 
-+ `scrollto`
+- `scrollto`
 
-+ `scrolltotop`
+- `scrolltotop`
 
-+ `scrolltobottom`
-
+- `scrolltobottom`
 
 ### Troubleshooting
 
@@ -117,4 +125,3 @@ Copyright (c) 2019-2021 [langbamit][langbamit] (original author).
 [langbamit]: https://github.com/langbamit
 [mit-license]: https://mit-license.org/
 [svelte-scrollto]: https://github.com/langbamit/svelte-scrollto
-
